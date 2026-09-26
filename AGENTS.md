@@ -1,9 +1,91 @@
 <!-- BEGIN:nextjs-agent-rules -->
 
-# This is NOT the Next.js you know
+# AGENTS.md
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+## Project Overview
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+Build a modern single-page ticket sales website for the 60th anniversary celebration of ФМЦТ.
+
+The website is for selling tickets to a concert and managing participants of a raffle.
+
+Event:
+- Date: 6 October
+- Time: 16:00
+- Location: Велика зала ректорату УжНУ
+- Ticket price: 100 UAH
+- Raffle prizes:
+  - AirPods 4
+  - Zepline coffee machine
+  - Printer
+
+All money collected during the concert will be donated to support Ukrainian military personnel.
+
+---
+
+## Tech Stack
+
+Use:
+
+- Next.js
+- TypeScript
+- React
+- Tailwind CSS
+- Supabase for participant data
+- Next.js App Router
+
+Do not introduce unnecessary libraries.
+
+Prefer native Next.js/React functionality when possible.
+
+---
+
+## Design
+
+The design should be based on the provided event poster.
+
+Visual style:
+
+- Dark futuristic aesthetic
+- Black / near-black background
+- Silver and white elements
+- Neon purple and blue accents
+- Disco / concert atmosphere
+- Thin glowing lines
+- Glass-like cards
+- Rounded corners
+- Subtle animations
+- Strong visual hierarchy
+
+Suggested colors:
+
+```text
+Background: #050507
+Secondary background: #0B0B12
+Cards: #11111B
+Primary accent: #8B5CF6
+Secondary accent: #22D3EE
+Text: #F5F5F5
+Muted text: #A1A1AA
+Border: rgba(139, 92, 246, 0.35)
+
+## Reference Design
+
+The file:
+
+`/public/poster.jpg`
+
+is the official visual reference for the event.
+
+Use it to match:
+
+- overall atmosphere
+- disco ball
+- lighting
+- composition
+- colors
+- prizes
+- typography style
+
+Do not modify the original poster.
 
 <!-- END:nextjs-agent-rules -->
