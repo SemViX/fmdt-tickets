@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 :root{
+  --font-display: var(--font-unbounded), sans-serif;
+  --font-body: var(--font-manrope), sans-serif;
+
   --color-background: #050507;
   --color-surface: #0b0b12;
   --color-card: #11111b;
@@ -27,4 +30,28 @@
 
   --color-ukraine-blue: #0057b7;
   --color-ukraine-yellow: #ffd700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-background);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
