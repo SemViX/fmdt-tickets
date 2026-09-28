@@ -21,7 +21,7 @@ const Giveaway = () => (
           Твій квиток — <span className="bg-linear-to-r from-violet-300 to-cyan-200 bg-clip-text text-transparent">твій шанс</span>
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg">
-          Святкуй разом із нами та долучайся до розіграшу подарунків. Кожен придбаний квиток бере участь у розіграші.
+          Святкуй разом із нами та долучайся до розіграшу подарунків. Кожен придбаний квиток бере участь у розіграші, а всі учасники мають однакові шанси на перемогу.
         </p>
       </div>
 
