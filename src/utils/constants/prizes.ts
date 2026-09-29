@@ -26,7 +26,7 @@ export const PRIZES:IPrize[] = [
   },
   {
     place: "03",
-    name: "Принтер",
+    name: "Принтер Canon",
     detail: "Корисний подарунок для навчання та роботи",
     image: "/printer.png",
     accent: "from-fuchsia-500/20 to-violet-400/5",

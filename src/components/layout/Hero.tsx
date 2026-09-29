@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, CalendarDays, MapPin, Ticket } from "lucide-react";
 
 const Hero = () => (
-  <main className="relative isolate overflow-hidden">
+  <main id="about" className="relative isolate overflow-hidden">
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       <div className="absolute -left-48 top-12 size-112 rounded-full bg-violet-600/15 blur-[120px]" />
       <div className="absolute -right-40 top-40 size-120 rounded-full bg-cyan-500/10 blur-[130px]" />
@@ -32,7 +32,7 @@ const Hero = () => (
         </div>
 
         <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-          <Link href="#tickets" className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-linear-to-r from-violet-600 to-cyan-500 px-7 py-4 text-sm font-extrabold text-white shadow-[0_0_32px_rgba(139,92,246,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_42px_rgba(34,211,238,0.3)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300">
+          <Link href="#how-to-buy" className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-linear-to-r from-violet-600 to-cyan-500 px-7 py-4 text-sm font-extrabold text-white shadow-[0_0_32px_rgba(139,92,246,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_42px_rgba(34,211,238,0.3)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300">
             <Ticket className="size-5" /> Купити квиток за 100 ₴ <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
           </Link>
           <p className="text-xs leading-5 text-zinc-500">Усі кошти з концерту — на підтримку<br className="hidden sm:block" /> українських військових</p>

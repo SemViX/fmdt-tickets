@@ -48,7 +48,7 @@ const Giveaway = () => (
           <Gift className="mt-0.5 hidden size-5 shrink-0 text-violet-300 sm:block" />
           <p className="text-sm leading-6 text-zinc-300">Купуй квиток на концерт і автоматично ставай учасником розіграшу.</p>
         </div>
-        <Link href="#tickets" className="group inline-flex min-h-11 shrink-0 items-center gap-2 rounded-xl border border-violet-300/30 bg-violet-400/10 px-5 py-3 text-sm font-bold text-white transition hover:border-cyan-300/50 hover:bg-cyan-300/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300">
+        <Link href="#how-to-buy" className="group inline-flex min-h-11 shrink-0 items-center gap-2 rounded-xl border border-violet-300/30 bg-violet-400/10 px-5 py-3 text-sm font-bold text-white transition hover:border-cyan-300/50 hover:bg-cyan-300/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300">
           Купити квиток <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
