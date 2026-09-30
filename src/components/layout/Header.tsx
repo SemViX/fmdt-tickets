@@ -1,6 +1,7 @@
 'use client'
 import { HEADER_ITEMS } from '@/utils/constants/header'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Button from '../ui/Button'
 import { TicketsIcon } from 'lucide-react'
 
@@ -8,6 +9,7 @@ const BANK_URL = "https://send.monobank.ua/jar/7mRu3fWkr";
 
 
 const Header = () => {
+    const pathname = usePathname();
     const onClick = () => {
         window.open(BANK_URL, "_blank", "noopener,noreferrer");
     };
@@ -28,7 +30,7 @@ const Header = () => {
                     {HEADER_ITEMS.map((item) => (
                         <Link
                             key={item.id}
-                            href={item.link}
+                            href={item.link.startsWith('#') && pathname !== '/' ? `/${item.link}` : item.link}
                             className='hidden rounded-md px-1 py-2 text-sm font-semibold text-(--color-text-secondary) transition-[colors, transform] duration-300 hover:text-(--color-secondary) scale-100 hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-secondary) lg:inline-flex'
                         >
                             {item.label}
