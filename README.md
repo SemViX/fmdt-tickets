@@ -34,3 +34,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Participant administration
+
+The public raffle list reads from the Supabase `participants` table. Authorized helpers can add rows at `/admin`.
+
+1. In Supabase **Authentication > Users**, invite each helper by email and have them set a password. Use the same email in `ADMIN_EMAILS`.
+2. Add `SUPABASE_SERVICE_ROLE_KEY` to the server environment (Supabase **Project Settings > API Keys**, service role/secret key). Also set `ADMIN_EMAILS` to the allowed emails, separated by commas. Keep the service key server-side; never prefix it with `NEXT_PUBLIC_`.
+3. Run `supabase/admin-participants.sql` in the Supabase SQL Editor. This keeps public read access and blocks direct client writes.
+4. Set the same environment variables in local development and the deployment host, then redeploy. Helpers sign in at `/admin` and enter the participant's name and ticket number.
+
+The API verifies the Supabase session and checks the email allowlist before inserting with the server-only service key. A database uniqueness constraint on `ticket_number` is recommended to prevent duplicate ticket numbers.
