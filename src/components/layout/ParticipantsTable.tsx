@@ -1,7 +1,19 @@
-import { supabase } from "@/lib/supabase";
+import "server-only";
+import { createClient } from "@supabase/supabase-js";
 import { ClipboardList, Ticket } from "lucide-react";
 
 const ParticipantsTable = async () => {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !serviceRoleKey) {
+    console.error("Supabase server configuration is missing.");
+    return <ParticipantsTableContent participants={[]} hasError />;
+  }
+
+  const supabase = createClient(supabaseUrl, serviceRoleKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
   const { data, error } = await supabase
     .from("participants")
     .select("full_name, ticket_number")
@@ -11,6 +23,21 @@ const ParticipantsTable = async () => {
     fullName: participant.full_name,
     ticketNumber: String(participant.ticket_number),
   }));
+
+  if (error) {
+    console.error("Failed to load participants:", error.message);
+  }
+
+  return <ParticipantsTableContent participants={participants} hasError={Boolean(error)} />;
+};
+
+function ParticipantsTableContent({
+  participants,
+  hasError,
+}: {
+  participants: { fullName: string; ticketNumber: string }[];
+  hasError: boolean;
+}) {
 
   return (
     <section
@@ -52,7 +79,7 @@ const ParticipantsTable = async () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/[0.07]">
-                {error ? (
+                {hasError ? (
                   <tr>
                     <td colSpan={3} className="px-5 py-12 text-center text-sm text-rose-300 sm:px-7">
                       Не вдалося завантажити список учасників. Спробуйте пізніше.
@@ -94,6 +121,6 @@ const ParticipantsTable = async () => {
       </div>
     </section>
   );
-};
+}
 
 export default ParticipantsTable;
